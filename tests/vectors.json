@@ -1,0 +1,59 @@
+{
+  "secret": "test-secret-key",
+  "webhookSecret": "webhook-secret",
+  "timestamp": "20261106153045123",
+  "requests": {
+    "simple": {
+      "json": "{\"accountNumber\":\"0123456789\",\"amount\":100000,\"content\":\"Thanh toan don hang\"}",
+      "signature": "f6922527866f86bfa035010f21a934a454e7bd89105c58a5eb972e5c34270025f9f2dfed893ad4dbb0b2d7fb85dfcb179521099c602278b73e5faace53b9e137"
+    },
+    "unicode": {
+      "json": "{\"name\":\"Nguyễn Văn A\",\"note\":\"Cảm ơn 🙏\"}",
+      "signature": "c618164586f59867b5c2314edc3df7f7a070e4862d013a05c041deb6c2ddc014fd8861637e8507f76f31d014b6e3688bd1ed3cd8a3790f7093c6413553e64dab"
+    },
+    "escapes": {
+      "json": "{\"s\":\"quote \\\" backslash \\\\ slash / tab\\t nl\\n cr\\r bs\\b ff\\f ctl\\u0001 del <a>&'\"}",
+      "signature": "4eaef727131a5ebdd9874f8f901bdf96228cbac9f41788881666fc61f416668b35a0eded79cdd69452ef6602945e9d177cb8c3fe4c3d6c8b372fb832546e1f59"
+    },
+    "line_separators": {
+      "json": "{\"s\":\"  \"}",
+      "signature": "6ec52e177161f1ea6a133c2088431bd9989106ed28c830cef3c38585e486b1684895e85f4ff113acf6186b63f949983cedac7696f7ce4163f84bf7ed519c5742"
+    },
+    "lone_surrogate": {
+      "json": "{\"s\":\"a\\ud800b\"}",
+      "signature": "f400f33fbcbbe2162fb309bcb7c4da03777864af665889f4417b20563332e3dea6401d955ed6ad2b3595925dc69ccd425b4d06494bafdb024178e2cc096bfba1"
+    },
+    "floats": {
+      "json": "{\"a\":1,\"b\":0.1,\"c\":123.456,\"d\":-2.5,\"e\":1e+21,\"f\":1e-7,\"g\":0.0000015,\"h\":100,\"i\":100000000000000000000,\"j\":0,\"k\":0.000001,\"l\":123456789.123,\"m\":5e-324,\"n\":1.7976931348623157e+308,\"o\":0.30000000000000004}",
+      "signature": "00815933edab0fad943c966a1ce0ebd54612e5d44a7374c804ef2c57e1c7820bf543760d121ae437606fa97ce66192fdd37d85afe6949fb9b9e9433b999acce5"
+    },
+    "nested": {
+      "json": "{\"items\":[{\"id\":1,\"ok\":true,\"v\":null},[],{}],\"meta\":{\"x\":[1,2,\"3\"]}}",
+      "signature": "efc361c551bfee86a16493b850369a0724e593e815ea028826d312891628f889232459c03115a2e5ef50e99460ed22e6e2b2ee1c5bb11c78a1087809dbf3442b"
+    },
+    "empty": {
+      "json": "{}",
+      "signature": "90a54d84164770bfefa1c4f7a89e55719306aeb5e7580dbf8ffc11880427834e8da7fd5373d7e22e5996161940e19f0af31c06285d35e2cd849b65938e5ad830"
+    },
+    "decimal": {
+      "json": "{\"amount\":1000.5}",
+      "signature": "1f75407c1e4a0a21347bc2c423d208a5eedb796ac329da08e7f520a131e27a9216d5c8ef3bfdb79be6a2e17cb4e6778503b4ace2a520bb722e5f2e6bf8bcb320"
+    },
+    "enum_value": {
+      "json": "{\"bankName\":\"ACB\"}",
+      "signature": "514a6feba92363eb4a847cb1299ae66aeb49ce126acea247529b3e7ba62231d453a6eb65159d86a69d5daed30a2edffc5b07d41a409216c48b4ae06b24f0a23c"
+    },
+    "max_safe_int": {
+      "json": "{\"n\":9007199254740991}",
+      "signature": "c738be4683aa0eb85c9959a2d5447b5f38b74c2b57458cf826c745daf865591d1e868cfd0fbe7d7f5f42f0fa2756bd029d018239e2864a3ca35785e09037c87f"
+    }
+  },
+  "webhook": {
+    "json": "{\"clientId\":\"cid\",\"transactionCode\":\"FT123\",\"amount\":50000,\"content\":\"Chuyển tiền\",\"bank\":\"ACB\",\"accountNumber\":\"123\",\"transactionDate\":\"20261106153000\",\"additionalData\":[{\"name\":\"k\",\"value\":\"v\"}]}",
+    "signature": "99179db5a50f1fc9ee039c340b72a9d3b375809e1f8dad5054d46522e7b3e6c65fbab95b96bf58366712e4669407b7a59e0c099d547fdeaeaac385bf760d2f00"
+  },
+  "urlValidation": {
+    "plainToken": "abc123",
+    "encryptedToken": "fdb03fc95f617400e6641a65b6af8ce0d9861ed42b58af27df41989d8617f61b"
+  }
+}

@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tingee-sdk"
+version = "0.4.0"
+description = "Tingee Open API SDK for Python"
+readme = "README.md"
+requires-python = ">=3.8"
+license = { text = "ISC" }
+authors = [{ name = "Tingee", email = "developer@heno.vn" }]
+keywords = ["tingee", "sdk", "payment", "api"]
+dependencies = []
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://developers.tingee.vn"
+Documentation = "https://developers.tingee.vn/docs/sdk"
+Repository = "https://github.com/tingeehub/tingee-python"
+Issues = "https://github.com/tingeehub/tingee-python/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+tingee_sdk = ["py.typed"]
